@@ -1,4 +1,11 @@
 {
-    "ImportPath": "github.com/heroku/go-getting-started",
-    "GoVersion": "go1.3.1"
+	"ImportPath": "github.com/born-in-makuhari/kanban",
+	"GoVersion": "go1.3.1",
+	"Deps": [
+		{
+			"ImportPath": "github.com/zenazn/goji",
+			"Comment": "v0.9.0-27-g4faf9df",
+			"Rev": "4faf9dfc1c88f0858e889b2d6903b4c4dbca11af"
+		}
+	]
 }
