@@ -15,8 +15,12 @@ func root(c web.C, w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "hello goji!")
 }
 
+func Route(m *web.Mux) {
+	m.Get("/hello/:name", hello)
+	m.Get("/", root)
+}
+
 func main() {
-	goji.Get("/hello/:name", hello)
-	goji.Get("/", root)
+	Route(goji.DefaultMux)
 	goji.Serve()
 }
