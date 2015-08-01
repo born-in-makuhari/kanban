@@ -25,7 +25,10 @@ func ParseResponse(res *http.Response) (string, int) {
 }
 
 var _ = Describe("KanbanC", func() {
-	Describe("'/'", func() {
+	//
+	// GET /
+	//
+	Describe("/", func() {
 		Context("when get", func() {
 			BeforeEach(func() {
 			})
@@ -42,6 +45,37 @@ var _ = Describe("KanbanC", func() {
 					Fail("http.Response returns error")
 				}
 				Expect(res.StatusCode).To(Equal(http.StatusOK))
+			})
+		})
+	})
+	//
+	// GET /hello/:name
+	//
+	Describe("/hello/:name", func() {
+		Context("when get with name", func() {
+			It("should return 200", func() {
+				app := web.New()
+				Route(app)
+				ts := httptest.NewServer(app)
+				defer ts.Close()
+				res, err := http.Get(ts.URL + "/hello/kanban")
+				if err != nil {
+					Fail("http.Response returns error")
+				}
+				Expect(res.StatusCode).To(Equal(http.StatusOK))
+			})
+		})
+		Context("when get without name", func() {
+			It("should return 404", func() {
+				app := web.New()
+				Route(app)
+				ts := httptest.NewServer(app)
+				defer ts.Close()
+				res, err := http.Get(ts.URL + "/hello/")
+				if err != nil {
+					Fail("http.Response returns error")
+				}
+				Expect(res.StatusCode).To(Equal(http.StatusNotFound))
 			})
 		})
 	})
