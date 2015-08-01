@@ -2,4 +2,4 @@ deployment:
   staging:
     branch: master
     heroku:
-      appname: born-in-makuhari
+      appname: born-in-makuhari-kanban
