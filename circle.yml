@@ -1,5 +1,5 @@
 deployment:
   staging:
-      branch: master
-          heroku:
-                appname: born-in-makuhari
+    branch: master
+    heroku:
+      appname: born-in-makuhari
