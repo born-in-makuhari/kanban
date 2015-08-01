@@ -1,1 +1,1 @@
-web: kanban -use-x-forwarded-for -silent
+web: kanban
