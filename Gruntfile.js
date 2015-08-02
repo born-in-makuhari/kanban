@@ -30,7 +30,7 @@ module.exports = function (grunt) {
           style: 'compressed',
         },
         files: {
-          '/app/public/style.css': 'assets/src/scss/*.sass'
+          'public/style.css': 'assets/src/scss/*.sass'
         },
       }
     },
