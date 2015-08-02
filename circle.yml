@@ -4,7 +4,7 @@ deployment:
     heroku:
       appname: born-in-makuhari-kanban
 dependencies:
-  "grunt-cli": *
+  "grunt-cli": 0.1.x
   grunt: 0.4.x
   pre:
     - bundle install
