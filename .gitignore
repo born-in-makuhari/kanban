@@ -1,6 +1,5 @@
 Godeps
 .sass-cache
 .bundle
-Gemfile.lock
 node_modules
 public/style.css*
