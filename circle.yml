@@ -1,4 +1,4 @@
-dependency:
+dependencies:
   post:
     - grunt
 deployment:
