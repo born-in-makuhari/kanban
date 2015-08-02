@@ -1,0 +1,18 @@
+= doctype html
+html lang=jp
+  head
+    meta charset=utf-8
+    title kanban
+    = css
+      h1 { color: gray; }
+      #container { padding: 50px; }
+  body
+    #container
+      h1 {{.Title}}
+      p
+        Sorry, kanban is still dozing
+      p
+        our project is here
+        a href=https://github.com/born-in-makuhari/kanban
+          | (GitHub)
+  
