@@ -14,7 +14,7 @@ html lang=jp
           h1 {{.Title}}
           p Sorry, kanban is still dozing
           p  our project is&nbsp;
-            a href=https://github.com/born-in-makuhari/kanban
+            a.btn.btn-primary href=https://github.com/born-in-makuhari/kanban
               | here
     script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
     script src="/bootstrap-3.3.5-dist/js/bootstrap.min.js"
