@@ -53,7 +53,7 @@ module.exports = function (grunt) {
     'sass:dev',
     'watch'
   ]);
-  grunt.registerTask('default', [
+  grunt.registerTask('heroku', [
     'sass:dist',
   ]);
 };
