@@ -25,13 +25,12 @@ module.exports = function (grunt) {
           'public/style.css': 'assets/src/scss/*.sass'
         }
       },
-      dist: {
+      heroku: {
         options: {
           style: 'compressed',
-          // compass: true
         },
         files: {
-          'public/style.css': 'assets/src/scss/*.sass'
+          '/app/public/style.css': 'assets/src/scss/*.sass'
         },
       }
     },
@@ -54,8 +53,8 @@ module.exports = function (grunt) {
     'sass:dev',
     'watch'
   ]);
-  grunt.registerTask('build', [
-    'sass:dist',
+  grunt.registerTask('heroku', [
+    'sass:heroku',
   ]);
 };
 
