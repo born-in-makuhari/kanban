@@ -15,6 +15,9 @@ import (
 	"net/http/httptest"
 )
 
+// --------------------------------------------------------------------
+// My helper functions
+
 func ParseResponse(res *http.Response) (string, int) {
 	defer res.Body.Close()
 	contents, err := ioutil.ReadAll(res.Body)
@@ -24,26 +27,43 @@ func ParseResponse(res *http.Response) (string, int) {
 	return string(contents), res.StatusCode
 }
 
+func Requester(url string) *http.Response {
+	res, err := http.Get(url)
+	if err != nil {
+		fmt.Printf("%s", err)
+		Fail("http.Response returns error")
+	}
+	return res
+}
+
+// --------------------------------------------------------------------
+// Describes
+
 var _ = Describe("KanbanC", func() {
+	var app *web.Mux
+	var ts *httptest.Server
+	var res *http.Response
+
+	// create Server
+	BeforeEach(func() {
+		app = web.New()
+		Route(app)
+		ts = httptest.NewServer(app)
+	})
+
+	// close Server
+	AfterEach(func() {
+		ts.Close()
+	})
+
 	//
 	// GET /
 	//
 	Describe("/", func() {
 		Context("when get", func() {
-			BeforeEach(func() {
-			})
 
 			It("should return 200", func() {
-				app := web.New()
-				Route(app)
-				ts := httptest.NewServer(app)
-				defer ts.Close()
-
-				res, err := http.Get(ts.URL + "/")
-				fmt.Printf("test %i", http.StatusOK)
-				if err != nil {
-					Fail("http.Response returns error")
-				}
+				res = Requester(ts.URL + "/")
 				Expect(res.StatusCode).To(Equal(http.StatusOK))
 			})
 		})
@@ -54,27 +74,13 @@ var _ = Describe("KanbanC", func() {
 	Describe("/hello/:name", func() {
 		Context("when get with name", func() {
 			It("should return 200", func() {
-				app := web.New()
-				Route(app)
-				ts := httptest.NewServer(app)
-				defer ts.Close()
-				res, err := http.Get(ts.URL + "/hello/kanban")
-				if err != nil {
-					Fail("http.Response returns error")
-				}
+				res = Requester(ts.URL + "/hello/kanban")
 				Expect(res.StatusCode).To(Equal(http.StatusOK))
 			})
 		})
 		Context("when get without name", func() {
 			It("should return 404", func() {
-				app := web.New()
-				Route(app)
-				ts := httptest.NewServer(app)
-				defer ts.Close()
-				res, err := http.Get(ts.URL + "/hello/")
-				if err != nil {
-					Fail("http.Response returns error")
-				}
+				res = Requester(ts.URL + "/hello/")
 				Expect(res.StatusCode).To(Equal(http.StatusNotFound))
 			})
 		})
