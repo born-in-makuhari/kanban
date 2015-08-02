@@ -3,9 +3,9 @@ dependencies:
     - bundle install
     - npm install
 deployment:
+  post:
+    - grunt build
   staging:
     branch: master
     heroku:
       appname: born-in-makuhari-kanban
-    commands:
-      - grunt heroku
