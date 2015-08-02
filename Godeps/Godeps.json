@@ -3,6 +3,10 @@
 	"GoVersion": "go1.3.1",
 	"Deps": [
 		{
+			"ImportPath": "github.com/hypebeast/gojistatic",
+			"Rev": "99b778e145961024738f4cd7c67e9d8766afc7f1"
+		},
+		{
 			"ImportPath": "github.com/onsi/ginkgo",
 			"Comment": "v1.2.0-8-g25380c6",
 			"Rev": "25380c62e61d3f90436be125b8127dbae578fdef"

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/hypebeast/gojistatic"
 	"github.com/yosssi/ace"
 	"github.com/zenazn/goji"
 	"github.com/zenazn/goji/web"
@@ -35,9 +36,7 @@ func Route(m *web.Mux) {
 
 func main() {
 	// setup static
-	static := web.New()
-	static.Get("/public/*", http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
-	goji.Handle("/public", static)
+	goji.Use(gojistatic.Static("public", gojistatic.StaticOptions{SkipLogging: true}))
 
 	// app routing
 	Route(goji.DefaultMux)
