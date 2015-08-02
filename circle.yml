@@ -1,11 +1,12 @@
+dependencies:
+  pre:
+    - bundle install
+    - npm install
+test:
+  pre:
+    - grunt build
 deployment:
   staging:
     branch: master
     heroku:
       appname: born-in-makuhari-kanban
-dependencies:
-  pre:
-    - bundle install
-    - npm install
-  post:
-    - grunt build
