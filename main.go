@@ -37,7 +37,7 @@ func main() {
 	// setup static
 	static := web.New()
 	static.Get("/public/*", http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
-	goji.Handle("/public/*", static)
+	goji.Handle("/public", static)
 
 	// app routing
 	Route(goji.DefaultMux)
