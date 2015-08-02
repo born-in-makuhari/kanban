@@ -3,6 +3,21 @@
 	"GoVersion": "go1.3.1",
 	"Deps": [
 		{
+			"ImportPath": "github.com/onsi/ginkgo",
+			"Comment": "v1.2.0-8-g25380c6",
+			"Rev": "25380c62e61d3f90436be125b8127dbae578fdef"
+		},
+		{
+			"ImportPath": "github.com/onsi/gomega",
+			"Comment": "v1.0-52-ga2ab864",
+			"Rev": "a2ab8644e0b6a33df2cbe44673bd0f6ebba9abc3"
+		},
+		{
+			"ImportPath": "github.com/yosssi/ace",
+			"Comment": "v0.0.4-41-g78e48a2",
+			"Rev": "78e48a2f0ac5fb5a642585f96b03a5f47f7775f5"
+		},
+		{
 			"ImportPath": "github.com/zenazn/goji",
 			"Comment": "v0.9.0-27-g4faf9df",
 			"Rev": "4faf9dfc1c88f0858e889b2d6903b4c4dbca11af"
