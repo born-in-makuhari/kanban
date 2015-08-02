@@ -28,11 +28,13 @@ func root(c web.C, w http.ResponseWriter, r *http.Request) {
 }
 
 func Route(m *web.Mux) {
+	m.Get("/style.css", http.FileServer(http.Dir("public")))
 	m.Get("/hello/:name", hello)
 	m.Get("/", root)
 }
 
 func main() {
+	// setup static
 	Route(goji.DefaultMux)
 	goji.Serve()
 }

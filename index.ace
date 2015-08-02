@@ -2,10 +2,8 @@
 html lang=jp
   head
     meta charset=utf-8
+    link rel=stylesheet href=/style.css
     title kanban
-    = css
-      h1 { color: gray; }
-      #container { padding: 50px; }
   body
     #container
       h1 {{.Title}}
