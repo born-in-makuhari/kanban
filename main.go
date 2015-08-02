@@ -6,7 +6,6 @@ import (
 	"github.com/zenazn/goji"
 	"github.com/zenazn/goji/web"
 	"net/http"
-	"path/filepath"
 )
 
 // Ace Template Engine
@@ -37,11 +36,7 @@ func Route(m *web.Mux) {
 func main() {
 	// setup static
 	static := web.New()
-	publicPath, err := filepath.Abs("public")
-	if err != nil {
-		panic(err)
-	}
-	static.Get("/public/*", http.StripPrefix("/public/", http.FileServer(http.Dir(publicPath))))
+	static.Get("/public/*", http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
 	goji.Handle("/public/*", static)
 
 	// app routing
