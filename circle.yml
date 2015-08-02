@@ -2,9 +2,9 @@ dependencies:
   pre:
     - bundle install
     - npm install
-    - grunt build
 deployment:
   staging:
     branch: master
-    heroku:
-      appname: born-in-makuhari-kanban
+    commands:
+      - git push git@heroku.com:born-in-makuhari-kanban.git $CIRCLE_SHA1:master
+      - heroku run grunt build
