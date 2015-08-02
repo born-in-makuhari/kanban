@@ -5,6 +5,5 @@ dependencies:
 deployment:
   staging:
     branch: master
-    commands:
-      - git push git@heroku.com:born-in-makuhari-kanban.git $CIRCLE_SHA1:master
-      - heroku run grunt build --app "born-in-makuhari-kanban"
+    heroku:
+      appname: born-in-makuhari-kanban

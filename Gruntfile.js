@@ -49,11 +49,11 @@ module.exports = function (grunt) {
    * Default task
    * Run `grunt` on the command line
    */
-  grunt.registerTask('default', [
+  grunt.registerTask('watch', [
     'sass:dev',
     'watch'
   ]);
-  grunt.registerTask('build', [
+  grunt.registerTask('default', [
     'sass:dist',
   ]);
 };
