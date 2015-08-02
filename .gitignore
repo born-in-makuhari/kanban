@@ -2,4 +2,4 @@ Godeps
 .sass-cache
 .bundle
 node_modules
-public/style.css*
+Gemfile.lock
