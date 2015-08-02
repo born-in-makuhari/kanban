@@ -10,7 +10,7 @@ html lang=jp
       p
         Sorry, kanban is still dozing
       p
-        our project is here
+        our project is here ->
         a href=https://github.com/born-in-makuhari/kanban
           | (GitHub)
   
