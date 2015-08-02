@@ -3,3 +3,4 @@ Godeps
 .bundle
 node_modules
 Gemfile.lock
+.DS_Store

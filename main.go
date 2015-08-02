@@ -28,6 +28,7 @@ func root(c web.C, w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// Route configures routing. it is also used in test-code
 func Route(m *web.Mux) {
 
 	m.Get("/hello/:name", hello)
@@ -36,7 +37,8 @@ func Route(m *web.Mux) {
 
 func main() {
 	// setup static
-	goji.Use(gojistatic.Static("public", gojistatic.StaticOptions{SkipLogging: true}))
+	goji.Use(gojistatic.Static("public",
+		gojistatic.StaticOptions{SkipLogging: true}))
 
 	// app routing
 	Route(goji.DefaultMux)
