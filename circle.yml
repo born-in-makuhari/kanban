@@ -3,3 +3,8 @@ deployment:
     branch: master
     heroku:
       appname: born-in-makuhari-kanban
+  machine:
+    pre:
+      - bundle install
+      - npm install
+      - grunt build
