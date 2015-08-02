@@ -2,9 +2,8 @@ dependencies:
   pre:
     - bundle install
     - npm install
-deployment:
-  post:
     - grunt build
+deployment:
   staging:
     branch: master
     heroku:
