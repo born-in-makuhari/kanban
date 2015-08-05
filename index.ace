@@ -7,13 +7,12 @@ html lang=jp
     link rel=stylesheet href=/css/styles.css
     title kanban
   body
-    .container
-      .row
-        .col-xs-12
-          h1 {{.Title}}
-          p Sorry, kanban is still dozing
-          p  our project is&nbsp;
-            a href=https://github.com/born-in-makuhari/kanban
-              | here
+    .container.still-dozing
+      .jumbotron
+        h1 {{.Title}}
+        p Sorry, kanban is still dozing
+        p  our project is&nbsp;
+          a.btn.btn-lg.btn-primary href=https://github.com/born-in-makuhari/kanban
+            | here
     script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
     script src="/js/bootstrap.min.js"

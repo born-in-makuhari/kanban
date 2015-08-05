@@ -1,6 +1,3 @@
-dependencies:
-  post:
-    - grunt
 deployment:
   staging:
     branch: master
