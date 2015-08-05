@@ -21,6 +21,13 @@
 // $brand-warning:         #f0ad4e
 // $brand-danger:          #d9534f
 
+$gray-base: #000;
+$brand-primary: darken(#428bca, 6.5%); // #337ab7
+$brand-success: #5cb85c;
+$brand-info: #5bc0de;
+$brand-warning: #f0ad4e;
+$brand-danger: #d9534f;
+
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
@@ -42,6 +49,7 @@
 //## Font, line-height, and color for body text, headings, and more.
 
 // $font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 // $font-family-serif:       Georgia, "Times New Roman", Times, serif
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 // $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace
@@ -106,6 +114,9 @@
 // $border-radius-base:        4px
 // $border-radius-large:       6px
 // $border-radius-small:       3px
+$border-radius-base: 2px;
+$border-radius-large: 3px;
+$border-radius-small: 1px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 // $component-active-color:    #fff
